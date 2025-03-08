@@ -17,7 +17,7 @@ class ModelArguments:
 
 @dataclass
 class DataArguments:
-    data_dir: Optional[str] = "data/cleanvul_nvd/hf-datasets"
+    data_dir: Optional[str] = "data/data_nvd/r2vul_rlhf_dataset"
     dataset_name: Optional[str] = "rlhf_all"
     languages: Optional[List[str]] = None
 

@@ -2,69 +2,21 @@ import json
 import random
 from collections import Counter, defaultdict
 
-import torch
 from datasets import DatasetDict, Dataset, concatenate_datasets, load_from_disk
-from peft import LoraConfig, prepare_model_for_kbit_training, get_peft_model
-from transformers import AutoModelForSequenceClassification, BitsAndBytesConfig, AutoTokenizer, set_seed
 
-DATASET_PATH = 'data/cleanvul_nvd/raw_dataset.json'
-CVE_DATA_PATH = 'data/cleanvul_nvd/cve_data.json'
-
-
-def load_model_and_tokenizer(model_args):
-    tokenizer = AutoTokenizer.from_pretrained(model_args.model_name_or_path, trust_remote_code=True, use_fast=True)
-
-    if "codebert" in model_args.model_name_or_path:
-        model = AutoModelForSequenceClassification.from_pretrained(
-            model_args.model_name_or_path,
-            num_labels=2,
-            trust_remote_code=True
-        )
-        tokenizer.pad_token = tokenizer.eos_token
-        model.config.pad_token_id = tokenizer.pad_token_id
-    else:
-        quantization_config = None
-        if model_args.use_qlora:
-            quantization_config = BitsAndBytesConfig(
-                load_in_4bit=True,
-                bnb_4bit_quant_type='nf4',
-                bnb_4bit_use_double_quant=True,
-                bnb_4bit_compute_dtype=torch.bfloat16
-            )
-        model_kwargs = {
-            "num_labels": 2,
-            "trust_remote_code": True,
-            "torch_dtype": torch.bfloat16,
-            "quantization_config": quantization_config,
-            "device_map": "auto"
-        }
-
-        lora_config = LoraConfig(
-            r=model_args.lora_r,
-            lora_alpha=model_args.lora_alpha,
-            target_modules='all-linear',
-            lora_dropout=model_args.lora_dropout,
-            bias='none',
-            task_type='SEQ_CLS',
-            modules_to_save=["score"],
-        )
-
-        model = AutoModelForSequenceClassification.from_pretrained(model_args.model_name_or_path, **model_kwargs)
-        model = prepare_model_for_kbit_training(model)
-        model = get_peft_model(model, lora_config)
-        model.print_trainable_parameters()
-
-    return model, tokenizer
+RAW_DATASET_PATH = "data/data_nvd/raw_dataset.json"
+HF_DATASET_PATH = "data/data_nvd/r2vul_rlhf_dataset"
 
 
 def add_samples(datasets, ratio):
+    dataset = load_from_disk(HF_DATASET_PATH)["train"]
     for key, test_dataset in datasets.items():
         language = "_".join(key.split('_')[1:])
 
-        train_dataset = load_from_disk(f"data/cleanvul_nvd/hf-datasets/sft_{language}")["train"]
+        train_dataset = dataset.filter(lambda e: e["lang"] == language, num_proc=32)
 
-        # load all samples in the current language from the original non-paired dataset
-        ds_extra_samples = load_base_dataset(DATASET_PATH, language)
+        # load all samples in the current language from the raw dataset
+        ds_extra_samples = load_base_dataset(RAW_DATASET_PATH, language)
         ds_extra_samples = Dataset.from_dict(transform_to_dict_of_lists(ds_extra_samples)).shuffle(42)
 
         # only select non-vulnerable samples to create the imbalance
@@ -88,24 +40,6 @@ def add_samples(datasets, ratio):
         datasets[key] = concatenate_datasets([test_dataset, new_samples])
 
     return datasets
-
-
-def get_cwe_labels(dataset, cwe_field):
-    # load CWE labels from train/validation/test sets
-    # ensure the mapping remains in the same order
-    all_labels = []
-
-    for key, ds in dataset.items():
-        all_labels.extend(c[0] for c in ds[cwe_field])
-
-    labels_count = Counter(all_labels)
-    del labels_count['NaN']
-
-    # NaN = labels for non-vulnerable functions = ignored in loss computation
-    labels_to_ids = {'NaN': -1}
-    for i, label in enumerate(labels_count):
-        labels_to_ids[label] = i
-    return labels_to_ids
 
 
 def transform_to_dict_of_lists(data_list):
@@ -146,12 +80,6 @@ def load_base_dataset(data_file, language=None):
     return data
 
 
-def load_cve_data():
-    with open(CVE_DATA_PATH, 'r') as f:
-        data = json.load(f)
-    return data
-
-
 def select_and_remove_samples(dataset, n):
     indices = list(range(n))
     selected_samples = dataset.select(indices)
@@ -185,7 +113,7 @@ def create_dataset_splits(data, merge_with_non_pairs=True, test_ratio='1:1', lan
         # `test_ratio`:
         #  we sample additional non-vulnerable samples from non-paired samples in the dataset
         #  to create imbalanced test datasets.
-        dataset = load_base_dataset(DATASET_PATH, language)
+        dataset = load_base_dataset(RAW_DATASET_PATH, language)
         dataset = Dataset.from_dict(transform_to_dict_of_lists(dataset)).shuffle(42)
         data_nv = dataset.filter(lambda e: e['vulnerable'] == 0)
 
@@ -243,9 +171,11 @@ def get_sample_pairs(data_file, language=None):
 
 
 if __name__ == '__main__':
+    pass
+    '''
     set_seed(42)
     languages = ["c_sharp", "javascript", "java", "python", "c"]
-    '''
+    
     
     for lang in languages:
         """
@@ -274,7 +204,7 @@ if __name__ == '__main__':
         for n in range(1, 5):
             dataset = create_dataset_splits(
                 [
-                    json.loads(l) for l in open(f"data/cleanvul_nvd/paired_dataset_{lang}_annotated.json", 'r')
+                    json.loads(l) for l in open(f"data/data_nvd/paired_dataset_{lang}_annotated.json", 'r')
                 ], threshold=n, language=lang
             )
             dataset = concatenate_datasets([dataset['train'], dataset['validation'], dataset['test']])
@@ -292,12 +222,12 @@ if __name__ == '__main__':
     for lang in languages:
         dataset = create_dataset_splits(
             [
-                json.loads(l) for l in open(f"data/cleanvul_nvd/paired_dataset_{lang}_annotated.json", 'r')
+                json.loads(l) for l in open(f"data/data_nvd/paired_dataset_{lang}_annotated.json", 'r')
             ], threshold=4, language=lang
         )
         dataset = dataset.map(lambda e: {"function_len": len(tokenizer(e["function"])["input_ids"])})
         dataset = dataset.filter(lambda e: e["function_len"] < 4096)
-        dataset.save_to_disk(f"data/cleanvul_nvd/hf-datasets/{lang}")
+        dataset.save_to_disk(f"data/data_nvd/hf-datasets/{lang}")
         all_datasets.append(dataset)
 
     merged_dataset = DatasetDict({
@@ -306,5 +236,5 @@ if __name__ == '__main__':
         "test": concatenate_datasets([d["test"] for d in all_datasets]),
     })
     print(merged_dataset)
-    merged_dataset.save_to_disk("data/cleanvul_nvd/hf-datasets/all")
+    merged_dataset.save_to_disk("data/data_nvd/hf-datasets/all")
     """

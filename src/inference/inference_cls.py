@@ -9,12 +9,12 @@ from peft import AutoPeftModelForSequenceClassification
 from torch.utils.data import DataLoader
 from transformers import set_seed, AutoTokenizer, HfArgumentParser, AutoModelForSequenceClassification
 
-from src.arguments import InferenceArguments, ProbeArguments, DataArguments
+from src.arguments import InferenceArguments, DataArguments
 from src.utils import add_samples
 
 
 def main():
-    parser = HfArgumentParser((InferenceArguments, DataArguments, ProbeArguments))
+    parser = HfArgumentParser((InferenceArguments, DataArguments))
     args, data_args, probe_args = parser.parse_args_into_dataclasses()
     set_seed(42)
 

@@ -5,10 +5,65 @@ import evaluate
 import numpy as np
 import torch
 from datasets import load_from_disk
-from transformers import set_seed, TrainingArguments, Trainer, HfArgumentParser, EarlyStoppingCallback
+from peft import LoraConfig, prepare_model_for_kbit_training, get_peft_model
+from transformers import (
+    set_seed,
+    AutoTokenizer,
+    AutoModelForSequenceClassification,
+    BitsAndBytesConfig,
+    TrainingArguments,
+    HfArgumentParser,
+    Trainer,
+    EarlyStoppingCallback
+)
 
 from src.arguments import ModelArguments, DataArguments
-from src.utils import load_model_and_tokenizer
+
+
+def load_model_and_tokenizer(model_args):
+    tokenizer = AutoTokenizer.from_pretrained(model_args.model_name_or_path, trust_remote_code=True, use_fast=True)
+
+    if "codebert" in model_args.model_name_or_path:
+        model = AutoModelForSequenceClassification.from_pretrained(
+            model_args.model_name_or_path,
+            num_labels=2,
+            trust_remote_code=True
+        )
+        tokenizer.pad_token = tokenizer.eos_token
+        model.config.pad_token_id = tokenizer.pad_token_id
+    else:
+        quantization_config = None
+        if model_args.use_qlora:
+            quantization_config = BitsAndBytesConfig(
+                load_in_4bit=True,
+                bnb_4bit_quant_type='nf4',
+                bnb_4bit_use_double_quant=True,
+                bnb_4bit_compute_dtype=torch.bfloat16
+            )
+        model_kwargs = {
+            "num_labels": 2,
+            "trust_remote_code": True,
+            "torch_dtype": torch.bfloat16,
+            "quantization_config": quantization_config,
+            "device_map": "auto"
+        }
+
+        lora_config = LoraConfig(
+            r=model_args.lora_r,
+            lora_alpha=model_args.lora_alpha,
+            target_modules='all-linear',
+            lora_dropout=model_args.lora_dropout,
+            bias='none',
+            task_type='SEQ_CLS',
+            modules_to_save=["score"],
+        )
+
+        model = AutoModelForSequenceClassification.from_pretrained(model_args.model_name_or_path, **model_kwargs)
+        model = prepare_model_for_kbit_training(model)
+        model = get_peft_model(model, lora_config)
+        model.print_trainable_parameters()
+
+    return model, tokenizer
 
 
 def main():
