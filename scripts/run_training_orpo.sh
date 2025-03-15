@@ -14,8 +14,8 @@ b=0.3
 
 for model in "${models[@]}"; do
   CUDA_VISIBLE_DEVICES=0 python src/training/train_orpo.py \
-    --output_dir runs/orpo/${model}_lora_r16a32_b${b} \
-    --run_name orpo/${model}_lora_r16a32_b${b} \
+    --output_dir runs/orpo/${model}_b${b} \
+    --run_name orpo/${model}_b${b} \
     --model_name_or_path Qwen/${model} \
     --learning_rate 3.0e-4 \
     --lora_r 16 \

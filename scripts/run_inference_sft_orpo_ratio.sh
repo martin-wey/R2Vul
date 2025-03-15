@@ -7,7 +7,7 @@ ratios=("1:2" "1:3" "1:4" "1:5" "1:10")
 
 languages=("c_sharp" "java")
 
-model_dir="runs/orpo/Qwen2.5-Coder-1.5B-Instruct_lora_r16a32_b0.3/checkpoint-29356"
+model_dir="runs/orpo/Qwen2.5-Coder-1.5B-Instruct"
 
 for ratio in "${ratios[@]}"; do
   for lang in "${languages[@]}"; do

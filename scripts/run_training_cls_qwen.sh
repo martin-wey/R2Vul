@@ -15,8 +15,8 @@ models=(
 for model in "${models[@]}"; do
   for lang in "${languages[@]}"; do
     CUDA_VISIBLE_DEVICES=0 python src/training/train_cls.py \
-      --output_dir "runs/cls/${model}_lora_r16a32/${lang}" \
-      --run_name "cls/${model}_lora_r16a32/${lang}" \
+      --output_dir "runs/cls/${model}/${lang}" \
+      --run_name "cls/${model}/${lang}" \
       --model_name_or_path "Qwen/${model}" \
       --languages ${lang} \
       --lora_r 16 \

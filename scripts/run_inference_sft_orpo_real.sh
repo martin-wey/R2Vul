@@ -4,14 +4,14 @@ export HF_HOME="/data/.cache/huggingface"
 export PYTHONPATH="$PYTHONPATH:$PWD"
 
 model_dirs=(
-  "runs/orpo/Qwen2.5-Coder-1.5B-Instruct_lora_r16a32_b0.3/checkpoint-29356"
-  "runs/sft/Qwen2.5-Coder-1.5B-Instruct_lora_r16a32/multi/best_model_checkpoint"
+  "runs/orpo/Qwen2.5-Coder-1.5B-Instruct"
+  "runs/sft/Qwen2.5-Coder-1.5B-Instruct/multi"
 
-  "runs/orpo/Qwen2.5-Coder-7B-Instruct_lora_r16a32_b0.3/checkpoint-29356"
-  "runs/sft/Qwen2.5-Coder-7B-Instruct_lora_r16a32/multi/best_model_checkpoint"
+  "runs/orpo/Qwen2.5-Coder-7B-Instruct"
+  "runs/sft/Qwen2.5-Coder-7B-Instruct/multi"
 
-  "runs/orpo/Qwen2.5-Coder-0.5B-Instruct_lora_r16a32_b0.3/checkpoint-29356"
-  "runs/sft/Qwen2.5-Coder-0.5B-Instruct_lora_r16a32/multi/best_model_checkpoint"
+  "runs/orpo/Qwen2.5-Coder-0.5B-Instruct"
+  "runs/sft/Qwen2.5-Coder-0.5B-Instruct/multi"
 )
 
 for model_dir in "${model_dirs[@]}"; do

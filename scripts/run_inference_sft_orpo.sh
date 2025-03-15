@@ -9,7 +9,7 @@ languages=("c_sharp" "javascript" "java" "python" "c")
 # languages=("c_sharp")
 
 # model checkpoint -> change to your model checkpoint dir
-model_dir="runs/sft/Qwen2.5-Coder1.5B-Instruct_lora_r16a32/multi"
+model_dir="runs/sft/Qwen2.5-Coder1.5B-Instruct/multi"
 
 for lang in "${languages[@]}"; do
   CUDA_VISIBLE_DEVICES=0 python src/inference/inference_cot.py \

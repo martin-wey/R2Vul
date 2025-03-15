@@ -16,8 +16,8 @@ models=(
 for lang in "${languages[@]}"; do
   for model in "${models[@]}"; do
     CUDA_VISIBLE_DEVICES=0 python src/training/train_sft.py \
-      --output_dir runs/sft/${model}_lora_r16a32/${lang} \
-      --run_name sft/${lang}/${model}_lora_r16a32 \
+      --output_dir runs/sft/${model}/${lang} \
+      --run_name sft/${lang}/${model} \
       --model_name_or_path Qwen/${model} \
       --completion_only \
       --languages ${lang} \

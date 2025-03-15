@@ -4,10 +4,10 @@ export HF_HOME="/data/.cache/huggingface"
 export PYTHONPATH="$PYTHONPATH:$PWD"
 
 model_dirs=(
-  "runs/cls/CodeBERT/java/best_model_checkpoint"
-  "runs/cls/Qwen2.5-Coder-0.5B-Instruct_lora_r16a32/java/best_model_checkpoint"
-  "runs/cls/Qwen2.5-Coder-1.5B-Instruct_lora_r16a32/java/best_model_checkpoint"
-  "runs/cls/Qwen2.5-Coder-7B-Instruct_lora_r16a32/java/best_model_checkpoint"
+  "runs/cls/CodeBERT/java"
+  "runs/cls/Qwen2.5-Coder-0.5B-Instruct/java"
+  "runs/cls/Qwen2.5-Coder-1.5B-Instruct/java"
+  "runs/cls/Qwen2.5-Coder-7B-Instruct/java"
 )
 
 for model_dir in "${model_dirs[@]}"; do

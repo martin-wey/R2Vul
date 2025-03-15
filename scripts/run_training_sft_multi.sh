@@ -14,8 +14,8 @@ models=(
 
 for model in "${models[@]}"; do
   CUDA_VISIBLE_DEVICES=0 python src/training/train_sft.py \
-    --output_dir runs/sft/${model}_lora_r16a32/multi \
-    --run_name sft/multi/${model}_lora_r16a32 \
+    --output_dir runs/sft/${model}/multi \
+    --run_name sft/multi/${model} \
     --model_name_or_path Qwen/${model} \
     --completion_only \
     --languages all \
