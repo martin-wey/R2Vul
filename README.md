@@ -1,6 +1,6 @@
 # R2Vul: Learning to Reason about Software Vulnerabilities with Reinforcement Learning and Structured Reasoning Distillation
 
-This is the replication package accompanying our ICSE 2026 submission *"R2Vul: Learning to Reason about Software Vulnerabilities with Reinforcement Learning and Structured Reasoning Distillation"*.
+This is the replication package accompanying our paper *"R2Vul: Learning to Reason about Software Vulnerabilities with Reinforcement Learning and Structured Reasoning Distillation"*.
 
 The datasets and models checkpoints of this paper are available on [Zenodo](https://zenodo.org/records/15029989).
 
