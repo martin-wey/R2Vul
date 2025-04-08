@@ -68,8 +68,8 @@ Included data:
 *Depending on the experiments you want to conduct, download the according dataset zip file, and extract it under a `/data` folder.*
 
 The models include:
-1. `cls.zip` - Models fine-tuned using CLS.
-2. `sft.zip` - Models fine-tuned using SFT () 
+1. `cls.zip` - Models fine-tuned using CLS
+2. `sft.zip` - Models fine-tuned using SFT
 3. `orpo.zip` - Models fine-tuned using ORPO (R2Vul)
 4. `MSIVD.zip` - MSIVD model checkpoint 
 5. `VulLLM.zip` - VulLLM model checkpoint
