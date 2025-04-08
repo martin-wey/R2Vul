@@ -23,8 +23,8 @@ The image is based on `nvidia/cuda:12.4.0` for Ubuntu. Depending on your machine
 
 1. **Download the repository**
 
-First, download this anonymized repository (top-right button). 
-Next, open a terminal and change current directory to `R2Vul-44C0`.
+First, download this repository (top-right button). 
+Next, open a terminal and change current directory to `R2Vul`.
 
 2. **Build the docker image**  
 
@@ -37,7 +37,7 @@ This builds the docker image and ensures Python 3 is properly installed.
 
 Next, you can instantiate a new docker container based on the image we just created.
 ```bash
-docker run -it --name r2vul -d -v R2Vul-44C0:/r2vul --gpus all r2vul-image
+docker run -it --name r2vul -d -v R2Vul:/r2vul --gpus all r2vul-image
 ```
 You can then start the container and attach to it:
 ```bash
