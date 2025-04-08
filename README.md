@@ -29,7 +29,7 @@ Next, open a terminal and change current directory to `R2Vul`.
 2. **Build the docker image**  
 
 ```bash
-   docker build -t r2vul-image .
+docker build -t r2vul-image .
 ```
 This builds the docker image and ensures Python 3 is properly installed.
 
