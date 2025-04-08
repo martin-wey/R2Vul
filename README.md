@@ -21,9 +21,9 @@ The project is structured as follows.
 We provide a `Dockerfile` to setup a docker image to run our code.
 The image is based on `nvidia/cuda:12.4.0` for Ubuntu. Depending on your machine, you can look for an appropriate base image that runs cuda 12.4.0 on [dockerhub](https://hub.docker.com/r/nvidia/cuda/tags?name=12.4.0).
 
-1. **Download the repository**
+1. **Clone the repository**
 
-First, download this repository (top-right button). 
+First, clone this repository. 
 Next, open a terminal and change current directory to `R2Vul`.
 
 2. **Build the docker image**  
