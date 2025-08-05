@@ -23,13 +23,24 @@ class DataArguments:
 
     # reverse label for negative sample reasoning generation
     reverse_labels: Optional[bool] = False
+
+    # sample fraction for data ablation experiments
+    sample_fraction: Optional[float] = 1.0
+
     preprocessing_num_workers: Optional[int] = 32
+
+
+@dataclass
+class ProbeArguments:
+    probe_rank: Optional[int] = 128
+    probe_layer: Optional[int] = None
 
 
 @dataclass
 class InferenceArguments:
     model_name_or_path: str = "Qwen/Qwen2.5-Coder-32B-Instruct"
     output_dir: Optional[str] = None
+    seed: Optional[int] = 42
 
     max_new_tokens: Optional[int] = 2048
     strategy: Optional[str] = "zero-shot"
@@ -40,4 +51,9 @@ class InferenceArguments:
     temperature: Optional[float] = 0.2
     top_k: Optional[float] = 40
     top_p: Optional[float] = 0.95
-    num_return_sequences: Optional[int] = 10
+    num_return_sequences: Optional[int] = 10 # num return sequences for self-consistency generation
+
+    use_calibration: Optional[bool] = False
+    confidence_threshold: Optional[float] = 0.7
+    generate_vulnerable: Optional[bool] = False
+    generate_non_vulnerable: Optional[bool] = False

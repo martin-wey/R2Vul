@@ -6,11 +6,11 @@ import evaluate
 import torch
 from datasets import load_from_disk, DatasetDict
 from peft import AutoPeftModelForSequenceClassification
+from src.utils import add_samples
 from torch.utils.data import DataLoader
 from transformers import set_seed, AutoTokenizer, HfArgumentParser, AutoModelForSequenceClassification
 
 from src.arguments import InferenceArguments, DataArguments
-from src.utils import add_samples
 
 
 def main():
@@ -98,7 +98,6 @@ def main():
 
     precision_results = precision.compute(predictions=predictions, references=labels)
     recall_results = recall.compute(predictions=predictions, references=labels)
-
     f_results = compute_f_scores(precision_results['precision'], recall_results['recall'])
 
     metrics = precision_results | recall_results | f_results

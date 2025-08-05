@@ -13,7 +13,7 @@ from src.templates import cot_system_prompt, prompt_template
 def main():
     parser = HfArgumentParser((ORPOConfig, ModelArguments, DataArguments))
     training_args, model_args, data_args = parser.parse_args_into_dataclasses()
-    set_seed(42)
+    set_seed(training_args.seed)
 
     tokenizer = AutoTokenizer.from_pretrained(
         model_args.model_name_or_path, trust_remote_code=True, use_fast=True

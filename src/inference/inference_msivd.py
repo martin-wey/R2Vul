@@ -14,7 +14,6 @@ from transformers import (
 
 from src.arguments import InferenceArguments, DataArguments
 
-
 system_prompt = """<s>system
 You are an expert in locating and fixing security vulnerabilities in code, can help answer vulnerability questions, and suggest repairs
 </s>

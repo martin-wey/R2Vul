@@ -4,6 +4,7 @@ import os
 import evaluate
 import torch
 from datasets import DatasetDict, load_from_disk
+from src.utils import add_samples
 from tqdm import tqdm
 from transformers import (
     HfArgumentParser,
@@ -17,7 +18,6 @@ from src.generation_utils import (
     base_generation,
     self_consistency_generation
 )
-from src.utils import add_samples
 
 
 def main():

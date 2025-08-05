@@ -69,7 +69,7 @@ def load_model_and_tokenizer(model_args):
 def main():
     parser = HfArgumentParser((TrainingArguments, ModelArguments, DataArguments))
     training_args, model_args, data_args = parser.parse_args_into_dataclasses()
-    set_seed(42)
+    set_seed(training_args.seed)
 
     dataset = load_from_disk(os.path.join(data_args.data_dir, data_args.dataset_name))
     if data_args.languages[0] != "all":

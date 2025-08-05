@@ -1,0 +1,311 @@
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "The code does not contain any direct data flow vulnerabilities. It properly handles input and output, ensuring that data is properly validated and sanitized before being used. The code follows a logical and structured control flow. It includes proper conditional statements and loops to handle different scenarios, ensuring that the code executes as intended. There are no indications of any control flow vulnerabilities, such as insecure or unintended branching. Therefore, the code is not vulnerable.", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "The code does not contain any direct data flow vulnerabilities. It properly handles user input and does not perform any unsafe operations on the data without proper validation or sanitization. The code follows a logical control flow without any obvious vulnerabilities such as insecure branching or uncontrolled loops. It does not contain any potential security risks such as unrestricted file uploads, unvalidated redirects, or insecure session management. Therefore, the code is not vulnerable.", "prediction": 0}
+{"response": "The code does not have any direct input from external sources such as user input or external files. It only performs operations on predefined variables and does not interact with any external data sources. Therefore, the code is not vulnerable.", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "The code does not have any direct input from external sources, such as user input or external files. It only performs operations on predefined variables and does not interact with any external data sources. Therefore, the code is not vulnerable.", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "The code does not have any input or output statements that could potentially lead to data leakage or manipulation. It only contains variable assignments and function calls, which do not involve any user input or external data sources. Therefore, the code is not vulnerable.", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "The code does not contain any direct data flow vulnerabilities. It properly handles user input and does not perform any unsafe operations on the data without proper validation or sanitization. The code follows a logical control flow without any vulnerable constructs such as unrestricted conditionals, unvalidated redirects, or insecure loops. It does not contain any potential security risks such as insecure file uploads, insecure database queries, or insecure API calls. Therefore, the code is", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "The code does not have any direct input from external sources such as user input or external files. It only performs operations on predefined variables and does not interact with any external data sources. Therefore, the code is not vulnerable.", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "The code does not have any direct input from external sources such as user input or external APIs. It only performs operations on predefined variables and does not interact with any external data sources. Therefore, the code is not vulnerable.", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "The code does not have any direct input from external sources, such as user input or external files. It only performs operations on predefined variables and does not interact with any external data sources. Therefore, the code is not vulnerable.", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "The code does not have any direct input from external sources such as user input or external files. It only performs operations on predefined variables and does not interact with any external data sources. Therefore, the code is not vulnerable.", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "The code does not have any direct input from external sources, such as user input or external files. It only uses predefined variables and functions within the code itself. Therefore, the code is not vulnerable.", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "The code does not have any direct data flow vulnerabilities. It properly handles user input and does not perform any unsafe operations on the data. The code follows a structured control flow with proper conditional statements and loops. There are no instances of uncontrolled branching or unvalidated conditions that could lead to vulnerabilities such as code injection or unauthorized access. Therefore, the code is not vulnerable.", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "The code does not have any direct input from external sources such as user input or external files. It only performs operations on predefined variables and does not interact with any external data sources. Therefore, the code is not vulnerable.", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "The code does not have any explicit data flow vulnerabilities. It properly handles user input and does not perform any unsafe operations on the data without proper validation or sanitization. The code follows a logical control flow without any vulnerable constructs such as unrestricted branching or unvalidated conditions. It does not contain any code that could lead to unauthorized access, privilege escalation, or other control flow manipulations. Therefore, the code is not vulnerable.", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "The code does not contain any input from external sources such as user input or external files. It only performs operations on predefined variables and does not manipulate or process any data that could be potentially malicious. Therefore, the code is not vulnerable.", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "The code does not have any input or output statements that could potentially lead to data vulnerabilities. It only performs calculations and manipulations on the variables within the code. The code does not contain any conditional statements or loops that could introduce vulnerabilities such as insecure branching or unintended execution paths. It follows a linear execution path from start to finish. Therefore, the code is not vulnerable.", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "The code does not have any direct input from external sources such as user input or external files. It only performs operations on predefined variables and does not interact with any external data sources. Therefore, the code is not vulnerable.", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "The code does not contain any direct data flow vulnerabilities. It properly handles input and output data, ensuring that there are no instances of data leakage or insecure data storage. The code follows a logical and structured control flow. It does not contain any vulnerable control flow patterns such as unrestricted branching, unvalidated conditions, or uncontrolled loops. The code also does not exhibit any potential code injection or command execution vulnerabilities. Therefore, the code is", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "The code does not have any input or output statements that could potentially lead to data leakage or manipulation. All variables are properly defined and used within the code. The code follows a linear control flow without any conditional statements or loops. It executes the instructions in the order they are written, without any branching or decision-making. Therefore, the code is not vulnerable.", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "0", "prediction": 0}
+{"response": "11:        if is_interface:\n12:            # FunctionDef with stateMutability in body (Interface defintions)\n13:            if (\n14:                len(node.body) == 1\n15:                and isinstance(node.body[0], vy_ast.Expr)\n16:                and isinstance(node.body[0].value, vy_ast.Name)\n17:               ", "prediction": 1}
+{"response": "The code does not have any explicit input or output statements that could potentially lead to data leakage or manipulation. It only contains variable assignments and function calls that do not involve any user input or external data sources. Therefore, the code is not vulnerable.", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "The code does not have any direct input from external sources, such as user input or external files. It only uses predefined variables and functions within the code itself. Therefore, the code is not vulnerable.", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "The code does not have any input or output statements that could potentially lead to data leakage or manipulation. It only contains variable assignments and function calls, without any direct interaction with external sources. Therefore, the code is not vulnerable.", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "The code does not have any input or output statements that could potentially lead to data vulnerabilities. It only contains variable assignments and function calls, which do not involve any user input or external data sources. Therefore, the code is not vulnerable.", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "11:        if not any(fullmatch(x, self.redirect_uri) for x in allowed_redirect_urls):\n12:                LOGGER.warning(\n13:                    \"Invalid redirect uri (regex comparison)\",\n14:                    redirect_uri=self.redirect_uri,\n15:                    expected=allowed_redirect_urls,\n16:                )\n17:                Event.new(\n18", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "The code does not contain any direct data flow vulnerabilities. It properly handles user input and does not perform any unsafe data manipulation or storage. The code follows a logical control flow without any obvious vulnerabilities such as insecure branching or unvalidated conditions. It does not contain any potential security risks such as unrestricted file uploads, unvalidated redirects, or insecure session management. Therefore, the code is not vulnerable.", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "The code does not contain any direct data flow vulnerabilities. It properly handles input validation and sanitization, ensuring that user inputs are properly validated and sanitized before being used in any critical operations. The code also uses parameterized queries to prevent SQL injection attacks. The code follows a logical and structured control flow. It includes proper error handling and exception management, ensuring that any unexpected conditions are gracefully handled. The code also includes appropriate conditional statements and loops to control the execution", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "The code does not contain any direct data flow vulnerabilities. It properly handles input validation and sanitization, ensuring that user input is properly validated and sanitized before being used. The code also uses secure methods for data storage and transmission, such as hashing passwords and using HTTPS for sensitive operations. The code follows a logical and structured control flow. It includes proper error handling and exception catching mechanisms, ensuring that the code does not crash or expose sensitive information in", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "0", "prediction": 0}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "The code does not have any explicit data flow vulnerabilities. It properly handles user input and does not perform any unsafe operations on the data. The code follows a logical flow without any vulnerable control flow patterns such as unrestricted branching or unvalidated conditions. It does not contain any potential security risks such as insecure file uploads, insecure redirects, or insecure data storage. Therefore, the code is not vulnerable.", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "The code does not have any explicit data flow vulnerabilities. It does not read or write any sensitive data without proper validation or sanitization. The code follows secure coding practices by using appropriate input validation and output encoding techniques. The code does not have any control flow vulnerabilities. It does not contain any insecure branching or looping constructs that could lead to unauthorized access or unintended execution paths. The code follows secure coding practices by using appropriate conditional statements and error handling mechan", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "False", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "The code does not have any direct data flow vulnerabilities. It properly handles user input and does not perform any unsafe operations on the data without proper validation or sanitization. The code follows a logical control flow without any vulnerable constructs such as unrestricted conditionals, unvalidated redirects, or insecure file operations. It does not contain any obvious security flaws that could lead to unauthorized access, privilege escalation, or information leakage. Therefore,", "prediction": 0}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "The code does not contain any direct data flow vulnerabilities. It properly handles user input and does not perform any unsafe data manipulation or storage. The code follows a logical control flow without any vulnerable constructs such as unrestricted branching, unvalidated conditions, or insecure loops. It does not contain any potential security risks such as insecure authentication, authorization, or session management. Therefore, the code is not vulnerable.", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "0", "prediction": 0}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "1", "prediction": 1}
+{"response": "The code does not have any input or output statements that could potentially lead to data vulnerabilities. It only contains variable assignments and function calls, without any direct interaction with external sources. Therefore, the code is not vulnerable.", "prediction": 0}
+{"response": "1", "prediction": 1}
+{"response": "0", "prediction": 0}
